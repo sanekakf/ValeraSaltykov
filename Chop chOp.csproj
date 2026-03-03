@@ -10,7 +10,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="pictures\black.jpg" />
+    <None Remove="pictures\white.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Npgsql" Version="10.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="pictures\black.jpg" />
+    <Resource Include="pictures\white.jpg" />
   </ItemGroup>
 
   <ItemGroup>

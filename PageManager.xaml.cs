@@ -14,16 +14,17 @@ using System.Windows.Shapes;
 namespace Chop_chOp
 {
     /// <summary>
-    /// Логика взаимодействия для PageAdmin.xaml
+    /// Логика взаимодействия для PageManager.xaml
     /// </summary>
-    public partial class PageAdmin : Page
+    public partial class PageManager : Page
     {
         public int userid;
-        public PageAdmin(int id)
+        public PageManager(int id)
         {
-            userid = id;
             InitializeComponent();
+            userid = id;
         }
+
         private void Products_Click(object sender, RoutedEventArgs e)
         {
             var productPage = new PageProducts(userid); // создаём экземпляр страницы
@@ -31,6 +32,7 @@ namespace Chop_chOp
             window.NavigateToPage(productPage); // помещаем страницу в окно
             window.Show();
         }
+
         private void Orders_Click(object sender, RoutedEventArgs e)
         {
             var orderWin = new WindowOrders(userid);

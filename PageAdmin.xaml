@@ -9,12 +9,11 @@
       Title="PageAdmin">
 
     <Grid>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="ПАНЕЛЬ АДМИНИСТРАТОРА" FontSize="25"/>
-        <TextBlock x:Name="hello" HorizontalAlignment="Center" Text="ПРИВЕТСВУЕМ ВАС" Margin="55"/>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width ="200">
-            <Button x:Name="addStudent" Margin="5" Content="Добавить студента" Click="addStudent_Click"/>
-            <Button x:Name="listStudents" Margin="5" Content="Список студентов" Click="listStudents_Click"/>
-            <Button x:Name="back" Margin="5" Content="Назад" Click="back_Click"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width ="200" >
+            <Button x:Name="Products" DockPanel.Dock="Left" Content="Товары" Margin="5" Click="Products_Click"  />
+            <Button x:Name="Orders" DockPanel.Dock="Right" Content="Заказы" Margin="5" Click="Orders_Click"  />
+
+
         </StackPanel>
     </Grid>
 </Page>

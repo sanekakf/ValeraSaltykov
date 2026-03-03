@@ -27,6 +27,8 @@ namespace Chop_chOp
 
         private async void Login_Click(object sender, RoutedEventArgs e)
         {
+            //NavigationService.Navigate(new PageProducts());
+            //return;
             var login = LoginInput.Text;
             var password = PasswordInput.Password;
             if (login=="" || password == ""){
@@ -49,17 +51,22 @@ namespace Chop_chOp
                 while (await reader.ReadAsync())
                 {
                     
-                        int id = reader.GetInt32(0);
+                        int userid = reader.GetInt32(0);
                         int roleid = reader.GetInt32(1);
                         switch (roleid)
                         {
                             case 1:
                                 MessageBox.Show($"Вы вошли как администратор");
-                                NavigationService.Navigate(new PageAdmin(id));
-                                break;
-                            case 2:
-                                MessageBox.Show($"Вы вошли как ученик");
-                                NavigationService.Navigate(new PageStudent(id));
+                                NavigationService.Navigate(new PageAdmin(userid));
+                            break;
+                            case 3:
+                                MessageBox.Show($"Вы вошли как менеджер");
+
+                                NavigationService.Navigate(new PageManager(userid));
+                            break;
+                            case 4:
+
+                                NavigationService.Navigate(new PageProducts(userid));
                                 break;
                             default:
                                 MessageBox.Show($"Неизвестная роль");
@@ -79,6 +86,11 @@ namespace Chop_chOp
         private void Reg_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new PageReg());
+        }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
